@@ -1,0 +1,71 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+
+	  <BaseOutputPath>$(SolutionDir)\bin\</BaseOutputPath>
+	  <OutputPath>$(SolutionDir)\bin\</OutputPath>
+	  <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	  <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+	  <UseCommonOutputDirectory>false</UseCommonOutputDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Cool.jpg" />
+    <None Remove="Logo.jpg" />
+    <None Remove="movie 6.jpg" />
+    <None Remove="photo_11_2024-04-03_19-31-55.jpg" />
+    <None Remove="photo_1_2024-04-03_19-31-55.jpg" />
+    <None Remove="photo_1_2024-04-03_20-34-26.jpg" />
+    <None Remove="photo_2_2024-04-03_20-34-26.jpg" />
+    <None Remove="pic123.png" />
+    <None Remove="picPoP.png" />
+    <None Remove="rotate-right.png" />
+    <None Remove="Task\Logo.jpg" />
+    <None Remove="Task\photo_3_2024-04-03_20-34-26.jpg" />
+    <None Remove="Task\photo_4_2024-04-03_19-31-55.jpg" />
+    <None Remove="Task\photo_5_2024-04-03_19-31-55.jpg" />
+    <None Remove="Task\photo_8_2024-04-03_19-31-55.jpg" />
+    <None Remove="Worker\סרט 5.jpg" />
+    <None Remove="סרט 1.jpg" />
+    <None Remove="סרט 2.jpg" />
+    <None Remove="סרט 3.jpg" />
+    <None Remove="סרט 4.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Cool.jpg" />
+    <Resource Include="Images\movie 6.jpg" />
+    <Resource Include="Images\סרט 5.jpg" />
+    <Resource Include="Images\סרט 1.jpg" />
+    <Resource Include="Images\סרט 2.jpg" />
+    <Resource Include="Images\סרט 3.jpg" />
+    <Resource Include="Images\סרט 4.jpg" />
+    <Resource Include="Images\pic123.png" />
+    <Resource Include="Images\picPoP.png" />
+    <Resource Include="Logo.jpg" />
+    <Resource Include="photo_11_2024-04-03_19-31-55.jpg" />
+    <Resource Include="photo_1_2024-04-03_19-31-55.jpg" />
+    <Resource Include="photo_1_2024-04-03_20-34-26.jpg" />
+    <Resource Include="photo_2_2024-04-03_20-34-26.jpg" />
+    <Resource Include="rotate-right.png" />
+    <Resource Include="Task\Logo.jpg" />
+    <Resource Include="Task\photo_3_2024-04-03_20-34-26.jpg" />
+    <Resource Include="Task\photo_4_2024-04-03_19-31-55.jpg" />
+    <Resource Include="Task\photo_5_2024-04-03_19-31-55.jpg" />
+    <Resource Include="Task\photo_8_2024-04-03_19-31-55.jpg" />
+  </ItemGroup>
+
+</Project>

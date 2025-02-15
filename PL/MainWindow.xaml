@@ -1,0 +1,69 @@
+﻿<Window x:Class="PL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+         DataContext="{Binding RelativeSource={RelativeSource Self}}" 
+         >
+    <Grid Background="White">
+        <Grid.OpacityMask>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FFBB5C5C" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.OpacityMask>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image HorizontalAlignment="Center" Height="263" Margin="0,139,0,0" Width="264" Source="/Logo.jpg" Opacity="100" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"/>
+        <Button Content="Handle Tasks" HorizontalAlignment="Center" Margin="0,36,0,0" VerticalAlignment="Top" Height="54" Width="170" Click="btnTasks_Click"  Background="#FF31236C" FontFamily="Bahnschrift SemiLight SemiCondensed" FontSize="20" FontStyle="Italic" BorderBrush="#FF00213A" Grid.Column="1" Grid.Row="1"/>
+
+        <Button Content="Initialization" HorizontalAlignment="Left" Margin="20,46,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="btnInitialization_Click"  FontSize="14" Background="#FF892956" FontFamily="Bahnschrift SemiLight SemiCondensed" Grid.Row="1"/>
+
+        <Button Content="Reset" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Height="24" Width="90" Click="btnReset_Click" FontSize="14" Background="#FF892956" FontFamily="Bahnschrift SemiLight SemiCondensed" Grid.Row="1"/>
+
+        <Button Content="Handle Workers" HorizontalAlignment="Center" Margin="0,103,0,0" VerticalAlignment="Top" Height="54" Width="170" Click="Button_Click" Background="#FF31236C" FontFamily="Bahnschrift SemiLight SemiCondensed" FontStyle="Italic" BorderBrush="#FF00213A" Grid.Column="1" Grid.Row="1" FontSize="20" FontWeight="Bold"/>
+        <Button Content="Schedual" HorizontalAlignment="Left" Margin="58,23,0,0" VerticalAlignment="Top" Click="SchedualButton" Height="32" Width="113" Background="#FF892956" FontFamily="Bahnschrift SemiLight SemiCondensed"
+               IsEnabled ="{Binding ProjectStatus, Mode=OneWay, Converter={StaticResource ConvertIsEnabledToProjectStatusKey}}" Grid.Column="2"/>
+        <Button Content="Gant" HorizontalAlignment="Left" Margin="20,84,0,0" VerticalAlignment="Top" Click="GantButton" Background="#FF892956" FontFamily="Bahnschrift SemiLight SemiCondensed" Height="24" Width="90" Grid.Row="1">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+
+        <DatePicker HorizontalAlignment="Left" Margin="227,23,0,0" SelectedDate="{Binding ProjectStartDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+
+         Visibility="{Binding ProjectStatus, Mode=OneWay, Converter={StaticResource ConvertVisibiltyToProjectStatusKey}, FallbackValue=Visible}" Grid.Column="2" VerticalAlignment="Top"/>
+        <Border BorderThickness="1" Margin="491,30,179,283" Opacity="0.9">
+            <Border.OpacityMask>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFD81717" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.OpacityMask>
+            <Border.Background>
+                <ImageBrush ImageSource="/Images/picPoP.png"/>
+            </Border.Background>
+        </Border>
+        <Button Content="return button" HorizontalAlignment="Left" Margin="20,26,0,0" VerticalAlignment="Top" Width="29" Click="returnButton" Background="#FF892956"/>
+
+
+
+
+    </Grid>
+</Window>

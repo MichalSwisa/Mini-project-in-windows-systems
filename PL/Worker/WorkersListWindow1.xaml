@@ -1,0 +1,35 @@
+﻿<Window x:Class="PL.Worker.WorkersListWindow1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.Task"
+        mc:Ignorable="d"
+        Title="WorkerList" Height="450" Width="600" Background="#FFC49595"
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}" Activated="Window_Activated">
+    <!--Internal, Upper Grid-->
+    <Grid Background="White">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Button Content="Add" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" Width="122" Click="btnAdd_Worker" Background="#FF892956"  FontSize="20" FontFamily="Bahnschrift SemiLight SemiCondensed"  Margin="0,10,0,0"/>
+        <Label Content="Selected Workers:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="55,14,0,0" VerticalAlignment="Top" Width="124" FontFamily="Bahnschrift SemiLight SemiCondensed" FontSize="16"/>
+        <ComboBox ItemsSource="{Binding Source={StaticResource WorkerCollectionKey}}" SelectedValue="{Binding Path=RoleFilter, Mode=TwoWay}" SelectionChanged="CmbWorkerFilterByRole" Margin="407,14,21,0" VerticalAlignment="Top"/>
+        <ListView Margin="5,5,5,5" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Path= WorkerList}" MouseDoubleClick="duableClick_Update_Worker">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Return Button" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Click="ReturnButton" Width="30" Background="#FF892956"/>
+    </Grid>
+
+
+</Window>
